@@ -1,0 +1,173 @@
+@import url("./range-slider.css");
+@import url("../font/stylesheet.css");
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+
+    button {
+        border: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    img:hover {
+        cursor: pointer;
+    }
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 35px 66px 35px;
+    overflow: hidden;
+    max-width: 400px;
+   // border: 1px solid rgba($color: #830000, $alpha: .3);
+    border-radius: 20px;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(131,0,0,.6) 100%);
+    .circle {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .diving {
+            height: 290px;
+            width: 290px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .img {
+                width: 265px;
+                height: 265px;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding-bottom: 20px;
+                position: relative;
+
+                img {
+                    position: absolute;
+                    top: 66%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 265px;
+                    height: 265px;
+                    border-radius: 100%;
+                }
+
+                p {
+                    color: white;
+                    position: relative;
+                    text-align: center;
+                    top: 50px;
+                }
+            }
+        }
+    }
+
+    .music-name {
+        color: #000;
+        font-size: 24px;
+        font-weight: 700;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .artist-name {
+        color: #830000;
+        font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .buttons {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        img:hover {
+            cursor: pointer;
+        }
+    }
+
+    .volume {
+        margin-top: 25px;
+        display: flex;
+        width: 100% !important;
+        justify-content: space-between;
+
+        input {
+            width: 100% !important;
+            appearance: none;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            width: 95%;
+        }
+    }
+
+    .last-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        svg>g>path{
+            transition: all .15s ease-in-out;
+        }
+    }
+}
+
+.playpause {
+    label {
+        display: block;
+        box-sizing: border-box;
+        width: 0;
+        height: 74px;
+
+        border-color: transparent transparent transparent #202020;
+        transition: 100ms all ease;
+        cursor: pointer;
+        border-style: solid;
+        border-width: 37px 0 37px 60px;
+    }
+
+    input[type="checkbox"] {
+        position: absolute;
+        left: -9999px;
+        &:checked+label {
+            border-style: double;
+            border-width: 0px 0 0px 60px;
+        }
+    }
+}
+
+.loop,.shuffle {
+    g>path {
+        stroke: #830000 !important;
+        
+    }
+}
